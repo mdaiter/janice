@@ -1,0 +1,47 @@
+%NAME%
+gettext
+
+%VERSION%
+0.18.3.1-2
+
+%DESC%
+GNU internationalization library
+
+%URL%
+http://www.gnu.org/software/gettext/
+
+%ARCH%
+armv7h
+
+%BUILDDATE%
+1382969931
+
+%INSTALLDATE%
+1383525323
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+odroid1@archlinuxarm.org>
+
+%SIZE%
+7499776
+
+%GROUPS%
+base
+base-devel
+
+%LICENSE%
+GPL
+
+%VALIDATION%
+sha256
+
+%DEPENDS%
+gcc-libs
+acl
+sh
+glib2
+libunistring
+
+%OPTDEPENDS%
+cvs: for autopoint tool
+

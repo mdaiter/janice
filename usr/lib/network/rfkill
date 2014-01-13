@@ -1,0 +1,73 @@
+## /usr/lib/network/globals needs to be sourced before this file
+
+
+## Determine the system interface of an rfkill device
+# $1: interface name
+# $2: rfkill name
+rf_get_path() {
+    local interface=$1 rfkill_name=${2:-auto} path
+
+    if [[ $rfkill_name == "auto" ]]; then
+        path=$(find -L "/sys/class/net/$interface/" -maxdepth 2 -type d -name "rfkill*" 2> /dev/null | head -n 1)
+        if [[ $path ]]; then
+            echo "$path"
+            return 0
+        fi
+        report_error "No rfkill switch available on interface '$interface'"
+    else
+        for path in /sys/class/rfkill/*; do
+            if [[ $(< "$path/name") == "$rfkill_name" ]]; then
+                echo "$path"
+                return 0
+            fi
+        done
+        report_error "No rfkill switch with name '$rfkill_name'"
+    fi
+    return 1
+}
+
+## Determine the blocking status of an rfkill device
+# $1: interface name
+# $2: rfkill name
+rf_status() {
+    local path
+    path=$(rf_get_path "$@") || return 1
+
+    if (( $(< "$path/hard" ) )); then
+        echo "hard"
+    elif (( $(< "$path/soft" ) )); then
+        echo "soft"
+    fi
+}
+
+## Unblock transmission through a wireless device
+# $1: interface name
+# $2: rfkill name
+rf_enable() {
+    case $(rf_status "$@") in
+      hard)
+        report_error "Transmission is hard-blocked on interface '$interface'"
+        return 1
+      ;;
+      soft)
+        report_debug "$FUNCNAME: echo 0 > '$path/soft'"
+        echo 0 > "$path/soft"
+        timeout_wait 1 '(( ! $(< "$path/soft") ))'
+      ;;
+    esac
+}
+
+## Block transmission through a wireless device
+# $1: interface name
+# $2: rfkill name
+rf_disable() {
+    local path
+    path=$(rf_get_path "$@") || return 1
+
+    report_debug "$FUNCNAME: echo 1 > '$path/soft'"
+    echo 1 > "$path/soft"
+    timeout_wait 1 '(( $(< "$path/soft") ))'
+}
+
+
+# vim: ft=sh ts=4 et sw=4:

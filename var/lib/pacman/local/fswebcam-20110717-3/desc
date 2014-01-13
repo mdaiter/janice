@@ -1,0 +1,36 @@
+%NAME%
+fswebcam
+
+%VERSION%
+20110717-3
+
+%DESC%
+Tiny and flexible webcam app.
+
+%URL%
+http://www.firestorm.cx/fswebcam
+
+%ARCH%
+armv7h
+
+%BUILDDATE%
+1373469721
+
+%INSTALLDATE%
+1387575231
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+odroid1@archlinuxarm.org>
+
+%SIZE%
+128000
+
+%LICENSE%
+GPL
+
+%VALIDATION%
+sha256
+
+%DEPENDS%
+gd
+

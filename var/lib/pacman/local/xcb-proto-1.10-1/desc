@@ -1,0 +1,36 @@
+%NAME%
+xcb-proto
+
+%VERSION%
+1.10-1
+
+%DESC%
+XML-XCB protocol descriptions
+
+%URL%
+http://xcb.freedesktop.org/
+
+%ARCH%
+any
+
+%BUILDDATE%
+1388242832
+
+%INSTALLDATE%
+1388439714
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+xu5@archlinuxarm.org>
+
+%SIZE%
+826368
+
+%REASON%
+1
+
+%LICENSE%
+custom
+
+%VALIDATION%
+sha256
+

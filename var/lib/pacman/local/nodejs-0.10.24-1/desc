@@ -1,0 +1,33 @@
+%NAME%
+nodejs
+
+%VERSION%
+0.10.24-1
+
+%DESC%
+Evented I/O for V8 javascript
+
+%URL%
+http://nodejs.org/
+
+%ARCH%
+armv7h
+
+%BUILDDATE%
+1387665561
+
+%INSTALLDATE%
+1388439742
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+xu1@archlinuxarm.org>
+
+%SIZE%
+17364992
+
+%LICENSE%
+MIT
+
+%VALIDATION%
+sha256
+

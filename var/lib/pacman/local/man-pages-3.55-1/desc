@@ -1,0 +1,36 @@
+%NAME%
+man-pages
+
+%VERSION%
+3.55-1
+
+%DESC%
+Linux man pages
+
+%URL%
+http://man7.org/linux/man-pages/index.html
+
+%ARCH%
+any
+
+%BUILDDATE%
+1387013341
+
+%INSTALLDATE%
+1387574549
+
+%PACKAGER%
+Kevin Mihelich <kevin@archlinuxarm.org>
+
+%SIZE%
+4941824
+
+%GROUPS%
+base
+
+%LICENSE%
+GPL
+
+%VALIDATION%
+sha256
+

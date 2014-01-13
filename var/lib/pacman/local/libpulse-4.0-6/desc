@@ -1,0 +1,49 @@
+%NAME%
+libpulse
+
+%VERSION%
+4.0-6
+
+%DESC%
+A featureful, general-purpose sound server (client library)
+
+%URL%
+http://www.freedesktop.org/wiki/Software/PulseAudio
+
+%ARCH%
+armv7h
+
+%BUILDDATE%
+1383143704
+
+%INSTALLDATE%
+1387574635
+
+%PACKAGER%
+Kevin Mihelich <kevin@archlinuxarm.org>
+
+%SIZE%
+1271808
+
+%REASON%
+1
+
+%LICENSE%
+LGPL
+
+%VALIDATION%
+sha256
+
+%DEPENDS%
+dbus
+libasyncns
+libcap
+libxtst
+libsm
+libsndfile
+json-c
+
+%OPTDEPENDS%
+alsa-plugins: ALSA support
+avahi: zeroconf support
+

@@ -1,0 +1,36 @@
+%NAME%
+recordproto
+
+%VERSION%
+1.14.2-1
+
+%DESC%
+X11 Record extension wire protocol
+
+%URL%
+http://xorg.freedesktop.org/
+
+%ARCH%
+any
+
+%BUILDDATE%
+1332613112
+
+%INSTALLDATE%
+1387574633
+
+%PACKAGER%
+Kevin Mihelich <kevin@archlinuxarm.org>
+
+%SIZE%
+135168
+
+%REASON%
+1
+
+%LICENSE%
+custom
+
+%VALIDATION%
+md5
+

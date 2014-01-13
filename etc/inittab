@@ -1,0 +1,14 @@
+# Loading standard ttys
+0:2345:once:/usr/sbin/ttyload
+
+# modem getty.
+# mo:235:respawn:/usr/sbin/mgetty -s 38400 modem
+
+# fax getty (hylafax)
+# mo:35:respawn:/usr/lib/fax/faxgetty /dev/modem
+
+# vbox (voice box) getty
+# I6:35:respawn:/usr/sbin/vboxgetty -d /dev/ttyI6
+# I7:35:respawn:/usr/sbin/vboxgetty -d /dev/ttyI7
+
+# end of /etc/inittab

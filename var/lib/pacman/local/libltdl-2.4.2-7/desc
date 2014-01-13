@@ -1,0 +1,36 @@
+%NAME%
+libltdl
+
+%VERSION%
+2.4.2-7
+
+%DESC%
+A system independent dlopen wrapper for GNU libtool
+
+%URL%
+http://www.gnu.org/software/libtool
+
+%ARCH%
+armv7h
+
+%BUILDDATE%
+1350177652
+
+%INSTALLDATE%
+1387597964
+
+%PACKAGER%
+Kevin Mihelich <kevin@archlinuxarm.org>
+
+%SIZE%
+978944
+
+%REASON%
+1
+
+%LICENSE%
+GPL
+
+%VALIDATION%
+md5
+

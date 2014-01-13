@@ -1,0 +1,36 @@
+%NAME%
+pacman-mirrorlist
+
+%VERSION%
+20140107-1
+
+%DESC%
+Arch Linux ARM mirror list for use by pacman
+
+%URL%
+http://www.archlinuxarm.org/about/mirrors
+
+%ARCH%
+armv7h
+
+%BUILDDATE%
+1389163209
+
+%INSTALLDATE%
+946693960
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+xu6@archlinuxarm.org>
+
+%SIZE%
+14336
+
+%GROUPS%
+base
+
+%LICENSE%
+GPL
+
+%VALIDATION%
+sha256
+

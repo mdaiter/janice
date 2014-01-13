@@ -1,0 +1,36 @@
+# Contributed by: Byron Williams <byron@112percent.com>
+
+. "$SUBR_DIR/ip"
+
+: ${IFENSLAVE:=ifenslave}
+declare -ag BindsToInterfaces
+
+bond_up() {
+    if is_interface "$Interface"; then
+        report_error "Interface '$Interface' already exists"
+        return 1
+    else
+        ip link add dev "$Interface" type bond
+    fi
+    bring_interface_up "$Interface"
+
+    for slave in "${BindsToInterfaces[@]}"; do
+        bring_interface_up "$slave"
+        $IFENSLAVE "$Interface" "$slave"
+    done
+
+    ip_set
+}
+
+bond_down() {
+    for slave in "${BindsToInterfaces[@]}"; do
+        $IFENSLAVE "$Interface" -d "$slave"
+    done
+
+    ip_unset
+    bring_interface_down "$Interface"
+    ip link delete "$Interface"
+}
+
+
+# vim: ft=sh ts=4 et sw=4:

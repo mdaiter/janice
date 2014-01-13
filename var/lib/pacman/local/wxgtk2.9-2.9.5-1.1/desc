@@ -1,0 +1,43 @@
+%NAME%
+wxgtk2.9
+
+%VERSION%
+2.9.5-1.1
+
+%DESC%
+GTK+ implementation of wxWidgets API for GUI
+
+%URL%
+http://wxwidgets.org
+
+%ARCH%
+armv7h
+
+%BUILDDATE%
+1386473429
+
+%INSTALLDATE%
+1387595620
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+odroid1@archlinuxarm.org>
+
+%SIZE%
+24332288
+
+%REASON%
+1
+
+%LICENSE%
+custom:wxWindows
+
+%VALIDATION%
+sha256
+
+%DEPENDS%
+gtk2
+gstreamer0.10-base
+
+%OPTDEPENDS%
+webkitgtk2: for webview support
+

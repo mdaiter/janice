@@ -1,0 +1,51 @@
+%NAME%
+erlang
+
+%VERSION%
+R16B03-4
+
+%DESC%
+General-purpose concurrent functional programming language developed by Ericsson
+
+%URL%
+http://www.erlang.org/
+
+%ARCH%
+armv7h
+
+%BUILDDATE%
+1389017264
+
+%INSTALLDATE%
+946693890
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+xu2@archlinuxarm.org>
+
+%SIZE%
+109536256
+
+%LICENSE%
+custom
+
+%VALIDATION%
+sha256
+
+%DEPENDS%
+ncurses
+glu
+wxgtk
+wxgtk2.9
+openssl
+
+%OPTDEPENDS%
+erlang-unixodbc: database support
+java-environment: for Java support
+lksctp-tools: for SCTP support
+
+%CONFLICTS%
+erlang-nox
+
+%PROVIDES%
+erlang-nox
+

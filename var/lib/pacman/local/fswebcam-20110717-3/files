@@ -1,0 +1,14 @@
+%FILES%
+etc/
+etc/fswebcam.conf
+usr/
+usr/bin/
+usr/bin/fswebcam
+usr/share/
+usr/share/man/
+usr/share/man/man1/
+usr/share/man/man1/fswebcam.1.gz
+
+%BACKUP%
+etc/fswebcam.conf	278a355d311cc9c5648384a71cabdcb7
+

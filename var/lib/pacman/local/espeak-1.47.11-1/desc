@@ -1,0 +1,37 @@
+%NAME%
+espeak
+
+%VERSION%
+1.47.11-1
+
+%DESC%
+Text to Speech engine for English, with support for other languages
+
+%URL%
+http://espeak.sourceforge.net/
+
+%ARCH%
+armv7h
+
+%BUILDDATE%
+1378299513
+
+%INSTALLDATE%
+1388852212
+
+%PACKAGER%
+Kevin Mihelich <kevin@archlinuxarm.org>
+
+%SIZE%
+2611200
+
+%LICENSE%
+GPL
+
+%VALIDATION%
+sha256
+
+%DEPENDS%
+portaudio
+libpulse
+

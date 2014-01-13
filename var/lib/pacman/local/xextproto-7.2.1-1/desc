@@ -1,0 +1,36 @@
+%NAME%
+xextproto
+
+%VERSION%
+7.2.1-1
+
+%DESC%
+X11 various extension wire protocol
+
+%URL%
+http://xorg.freedesktop.org/
+
+%ARCH%
+any
+
+%BUILDDATE%
+1332613425
+
+%INSTALLDATE%
+1387574633
+
+%PACKAGER%
+Kevin Mihelich <kevin@archlinuxarm.org>
+
+%SIZE%
+819200
+
+%REASON%
+1
+
+%LICENSE%
+custom
+
+%VALIDATION%
+md5
+

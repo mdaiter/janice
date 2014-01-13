@@ -1,0 +1,248 @@
+[2013-12-20 14:20] [PACMAN] Running 'pacman -Syu'
+[2013-12-20 14:20] [PACMAN] synchronizing package lists
+[2013-12-20 14:21] [PACMAN] starting full system upgrade
+[2013-12-20 14:21] [PACMAN] removed sysvinit-tools (2.88-12)
+[2013-12-20 14:21] [PACMAN] upgraded coreutils (8.21-2 -> 8.22-2)
+[2013-12-20 14:21] [PACMAN] upgraded cronie (1.4.9-5 -> 1.4.11-1)
+[2013-12-20 14:21] [PACMAN] upgraded file (5.15-1 -> 5.16-1)
+[2013-12-20 14:21] [PACMAN] upgraded inetutils (1.9.1.341-1 -> 1.9.1.341-2)
+[2013-12-20 14:21] [PACMAN] upgraded libldap (2.4.37-1 -> 2.4.38-1)
+[2013-12-20 14:21] [PACMAN] upgraded libpipeline (1.2.4-1 -> 1.2.5-1)
+[2013-12-20 14:21] [PACMAN] upgraded util-linux (2.24-1 -> 2.24-2)
+[2013-12-20 14:21] [PACMAN] upgraded systemd (208-2 -> 208-3)
+[2013-12-20 14:21] [PACMAN] upgraded mkinitcpio (0.15.0-1 -> 16-1)
+[2013-12-20 14:22] [ALPM-SCRIPTLET] >>> Updating module dependencies. Please wait ...
+[2013-12-20 14:22] [PACMAN] upgraded linux-am33x (3.12.1-1 -> 3.12.5-1)
+[2013-12-20 14:22] [PACMAN] upgraded linux-api-headers (3.10.6-1 -> 3.12.4-1)
+[2013-12-20 14:22] [PACMAN] upgraded man-pages (3.54-1 -> 3.55-1)
+[2013-12-20 14:22] [PACMAN] upgraded mpfr (3.1.2.p4-1 -> 3.1.2.p5-1)
+[2013-12-20 14:22] [PACMAN] upgraded pacman-mirrorlist (20130919-1 -> 20131209-1)
+[2013-12-20 14:22] [PACMAN] upgraded pcre (8.33-2 -> 8.34-1)
+[2013-12-20 14:22] [PACMAN] upgraded procps-ng (3.3.8-3 -> 3.3.9-1)
+[2013-12-20 14:22] [PACMAN] upgraded systemd-sysvcompat (208-2 -> 208-3)
+[2013-12-20 14:22] [PACMAN] Running 'pacman -S ffmpeg git'
+[2013-12-20 14:23] [PACMAN] installed alsa-lib (1.0.27.2-1)
+[2013-12-20 14:23] [PACMAN] installed libpng (1.6.7-1)
+[2013-12-20 14:23] [PACMAN] installed freetype2 (2.5.2-1)
+[2013-12-20 14:23] [ALPM-SCRIPTLET]   
+[2013-12-20 14:23] [ALPM-SCRIPTLET]   Fontconfig configuration is done via /etc/fonts/conf.avail and conf.d.
+[2013-12-20 14:23] [ALPM-SCRIPTLET]   Read /etc/fonts/conf.d/README for more information.
+[2013-12-20 14:23] [ALPM-SCRIPTLET] 
+[2013-12-20 14:23] [ALPM-SCRIPTLET]   Configuration via /etc/fonts/local.conf is still possible,
+[2013-12-20 14:23] [ALPM-SCRIPTLET]   but is no longer recommended for options available in conf.avail.
+[2013-12-20 14:23] [ALPM-SCRIPTLET] 
+[2013-12-20 14:23] [ALPM-SCRIPTLET]   Main systemwide configuration should be done by symlinks
+[2013-12-20 14:23] [ALPM-SCRIPTLET]   (especially for autohinting, sub-pixel and lcdfilter):
+[2013-12-20 14:23] [ALPM-SCRIPTLET]   
+[2013-12-20 14:23] [ALPM-SCRIPTLET]   cd /etc/fonts/conf.d
+[2013-12-20 14:23] [ALPM-SCRIPTLET]   ln -s ../conf.avail/XX-foo.conf
+[2013-12-20 14:23] [ALPM-SCRIPTLET]   
+[2013-12-20 14:23] [ALPM-SCRIPTLET]   Check also https://wiki.archlinux.org/index.php/Font_Configuration
+[2013-12-20 14:23] [ALPM-SCRIPTLET]   and https://wiki.archlinux.org/index.php/Fonts.
+[2013-12-20 14:23] [ALPM-SCRIPTLET] 
+[2013-12-20 14:23] [ALPM-SCRIPTLET] updating font cache... done.
+[2013-12-20 14:23] [PACMAN] installed fontconfig (2.11.0-1)
+[2013-12-20 14:23] [PACMAN] installed libtasn1 (3.4-1)
+[2013-12-20 14:23] [PACMAN] installed nettle (2.7.1-1)
+[2013-12-20 14:23] [PACMAN] installed p11-kit (0.20.1-1)
+[2013-12-20 14:23] [PACMAN] installed gnutls (3.2.7-1)
+[2013-12-20 14:23] [PACMAN] installed gsm (1.0.13-7)
+[2013-12-20 14:23] [PACMAN] installed lame (3.99.5-2)
+[2013-12-20 14:23] [PACMAN] installed recode (3.6-8)
+[2013-12-20 14:23] [PACMAN] installed enca (1.15-1)
+[2013-12-20 14:23] [PACMAN] installed fribidi (0.19.5-1)
+[2013-12-20 14:23] [PACMAN] installed libass (0.10.2-1)
+[2013-12-20 14:23] [PACMAN] installed libxml2 (2.9.1-5)
+[2013-12-20 14:23] [PACMAN] installed libbluray (0.4.0-1)
+[2013-12-20 14:23] [PACMAN] installed libmodplug (0.8.8.4-2)
+[2013-12-20 14:23] [PACMAN] installed libasyncns (0.8-5)
+[2013-12-20 14:23] [PACMAN] installed xcb-proto (1.9-1)
+[2013-12-20 14:23] [PACMAN] installed xproto (7.0.25-1)
+[2013-12-20 14:23] [PACMAN] installed libxdmcp (1.1.1-1)
+[2013-12-20 14:23] [PACMAN] installed libxau (1.0.8-2)
+[2013-12-20 14:23] [PACMAN] installed libxcb (1.9.1-2)
+[2013-12-20 14:23] [PACMAN] installed kbproto (1.0.6-1)
+[2013-12-20 14:23] [PACMAN] installed libx11 (1.6.2-1)
+[2013-12-20 14:23] [PACMAN] installed xextproto (7.2.1-1)
+[2013-12-20 14:23] [PACMAN] installed libxext (1.3.2-1)
+[2013-12-20 14:23] [PACMAN] installed inputproto (2.3-1)
+[2013-12-20 14:23] [PACMAN] installed libxi (1.7.2-1)
+[2013-12-20 14:23] [PACMAN] installed recordproto (1.14.2-1)
+[2013-12-20 14:23] [PACMAN] installed fixesproto (5.0-2)
+[2013-12-20 14:23] [PACMAN] installed libxfixes (5.0.1-1)
+[2013-12-20 14:23] [PACMAN] installed libxtst (1.2.2-1)
+[2013-12-20 14:23] [PACMAN] installed libice (1.0.8-2)
+[2013-12-20 14:23] [PACMAN] installed libsm (1.2.2-2)
+[2013-12-20 14:23] [PACMAN] installed libogg (1.3.1-2)
+[2013-12-20 14:23] [PACMAN] installed flac (1.3.0-1)
+[2013-12-20 14:23] [PACMAN] installed libvorbis (1.3.3-1)
+[2013-12-20 14:23] [PACMAN] installed libsndfile (1.0.25-2)
+[2013-12-20 14:23] [PACMAN] installed json-c (0.11-1)
+[2013-12-20 14:23] [PACMAN] installed libpulse (4.0-6)
+[2013-12-20 14:23] [PACMAN] installed libtheora (1.1.1-3)
+[2013-12-20 14:23] [PACMAN] installed libpciaccess (0.13.2-2)
+[2013-12-20 14:23] [PACMAN] installed libdrm (2.4.50-1)
+[2013-12-20 14:23] [PACMAN] installed libvdpau (0.7-1)
+[2013-12-20 14:23] [PACMAN] installed wayland (1.3.0-1)
+[2013-12-20 14:23] [PACMAN] installed xf86vidmodeproto (2.3.1-2)
+[2013-12-20 14:23] [PACMAN] installed libxxf86vm (1.1.3-1)
+[2013-12-20 14:23] [PACMAN] installed damageproto (1.2.1-2)
+[2013-12-20 14:23] [PACMAN] installed libxdamage (1.1.4-1)
+[2013-12-20 14:23] [PACMAN] installed elfutils (0.157-1)
+[2013-12-20 14:24] [PACMAN] installed llvm-libs (3.3-1)
+[2013-12-20 14:24] [PACMAN] installed mesa (10.0.1-1)
+[2013-12-20 14:24] [PACMAN] installed mesa-libgl (10.0.1-1)
+[2013-12-20 14:24] [PACMAN] installed libva (1.2.1-1)
+[2013-12-20 14:24] [PACMAN] installed libvpx (1.3.0-1)
+[2013-12-20 14:24] [PACMAN] installed opencore-amr (0.1.3-1)
+[2013-12-20 14:24] [PACMAN] installed openjpeg (1.5.1-1)
+[2013-12-20 14:24] [PACMAN] installed opus (1.1-1.1)
+[2013-12-20 14:24] [PACMAN] installed rtmpdump (20121230-3)
+[2013-12-20 14:24] [PACMAN] installed orc (0.4.18-1)
+[2013-12-20 14:24] [PACMAN] installed schroedinger (1.0.11-2)
+[2013-12-20 14:24] [PACMAN] installed renderproto (0.11.1-2)
+[2013-12-20 14:24] [PACMAN] installed libxrender (0.9.8-1)
+[2013-12-20 14:24] [PACMAN] installed sdl (1.2.15-5)
+[2013-12-20 14:24] [PACMAN] installed speex (1.2rc1-4)
+[2013-12-20 14:24] [PACMAN] installed libjpeg-turbo (1.3.0-4)
+[2013-12-20 14:24] [PACMAN] installed v4l-utils (1.0.0-2)
+[2013-12-20 14:24] [PACMAN] installed x264 (20131030-2)
+[2013-12-20 14:24] [PACMAN] installed xvidcore (1.3.2-3)
+[2013-12-20 14:24] [PACMAN] installed ffmpeg (1:2.1.1-2)
+[2013-12-20 14:24] [PACMAN] installed perl-error (0.17021-1)
+[2013-12-20 14:25] [PACMAN] installed git (1.8.5.2-1)
+[2013-12-20 14:29] [PACMAN] Running 'pacman -S vim'
+[2013-12-20 14:29] [PACMAN] installed vim-runtime (7.4.86-1)
+[2013-12-20 14:29] [PACMAN] installed gpm (1.20.7-4)
+[2013-12-20 14:29] [PACMAN] installed vim (7.4.86-1)
+[2013-12-20 14:33] [PACMAN] Running 'pacman -S fswebcam'
+[2013-12-20 14:33] [PACMAN] installed gd (2.1.0-2)
+[2013-12-20 14:33] [PACMAN] installed fswebcam (20110717-3)
+[2013-12-20 14:39] [PACMAN] Running 'pacman -S node'
+[2013-12-20 14:39] [PACMAN] Running 'pacman -S nodejs'
+[2013-12-20 14:40] [PACMAN] installed nodejs (0.10.23-1)
+[2013-12-20 20:09] [PACMAN] Running 'pacman -Syu'
+[2013-12-20 20:09] [PACMAN] synchronizing package lists
+[2013-12-20 20:09] [PACMAN] starting full system upgrade
+[2013-12-20 20:09] [PACMAN] upgraded gnutls (3.2.7-1 -> 3.2.8-1)
+[2013-12-20 20:11] [PACMAN] Running 'pacman -S erl'
+[2013-12-20 20:11] [PACMAN] Running 'pacman -S erlang'
+[2013-12-20 20:12] [PACMAN] installed glu (9.0.0-2)
+[2013-12-20 20:12] [PACMAN] installed atk (2.10.0-1)
+[2013-12-20 20:12] [PACMAN] installed libdatrie (0.2.6-1)
+[2013-12-20 20:12] [PACMAN] installed libthai (0.1.19-1)
+[2013-12-20 20:12] [PACMAN] installed pixman (0.32.4-1)
+[2013-12-20 20:12] [PACMAN] installed cairo (1.12.16-1)
+[2013-12-20 20:12] [PACMAN] installed libxft (2.3.1-1)
+[2013-12-20 20:12] [PACMAN] installed graphite (1:1.2.4-1)
+[2013-12-20 20:12] [PACMAN] installed harfbuzz (0.9.24-1)
+[2013-12-20 20:12] [PACMAN] installed pango (1.36.1-1)
+[2013-12-20 20:12] [PACMAN] installed libxcursor (1.1.14-1)
+[2013-12-20 20:12] [PACMAN] installed xineramaproto (1.2.1-2)
+[2013-12-20 20:12] [PACMAN] installed libxinerama (1.1.3-2)
+[2013-12-20 20:12] [PACMAN] installed randrproto (1.4.0-1)
+[2013-12-20 20:12] [PACMAN] installed libxrandr (1.4.2-2)
+[2013-12-20 20:12] [PACMAN] installed compositeproto (0.4.2-2)
+[2013-12-20 20:12] [PACMAN] installed libxcomposite (0.4.4-1)
+[2013-12-20 20:12] [PACMAN] installed shared-mime-info (1.2-1)
+[2013-12-20 20:12] [PACMAN] installed libtiff (4.0.3-4)
+[2013-12-20 20:12] [PACMAN] installed avahi (0.6.31-11)
+[2013-12-20 20:12] [PACMAN] installed libcups (1.7.0-2)
+[2013-12-20 20:12] [PACMAN] installed jasper (1.900.1-10)
+[2013-12-20 20:12] [PACMAN] installed gdk-pixbuf2 (2.30.2-1)
+[2013-12-20 20:12] [PACMAN] installed hicolor-icon-theme (0.12-2)
+[2013-12-20 20:12] [PACMAN] installed gtk-update-icon-cache (2.24.22-1)
+[2013-12-20 20:13] [PACMAN] installed gtk2 (2.24.22-1)
+[2013-12-20 20:13] [PACMAN] installed gstreamer0.10 (0.10.36-3)
+[2013-12-20 20:13] [PACMAN] installed videoproto (2.3.2-1)
+[2013-12-20 20:13] [PACMAN] installed libxv (1.0.10-1)
+[2013-12-20 20:13] [PACMAN] installed gstreamer0.10-base (0.10.36-2)
+[2013-12-20 20:13] [PACMAN] installed wxgtk (2.8.12.1-5)
+[2013-12-20 20:13] [PACMAN] installed wxgtk2.9 (2.9.5-1.1)
+[2013-12-20 20:14] [PACMAN] installed erlang (R16B03-2)
+[2013-12-20 20:18] [PACMAN] Running 'pacman -S erlang'
+[2013-12-20 20:51] [PACMAN] Running 'pacman -S base-devel make'
+[2013-12-20 20:51] [PACMAN] Running 'pacman -S gcc make'
+[2013-12-20 20:52] [PACMAN] installed binutils (2.23.1-3)
+[2013-12-20 20:52] [PACMAN] installed libmpc (1.0.1-2)
+[2013-12-20 20:52] [PACMAN] installed isl (0.11.1-1)
+[2013-12-20 20:52] [PACMAN] installed cloog (0.18.0-2)
+[2013-12-20 20:52] [PACMAN] installed ppl (1.0-1)
+[2013-12-20 20:52] [PACMAN] installed gcc (4.7.2-4)
+[2013-12-20 20:52] [PACMAN] installed libltdl (2.4.2-7)
+[2013-12-20 20:52] [PACMAN] installed gc (7.2.d-2)
+[2013-12-20 20:52] [PACMAN] installed guile (2.0.9-1)
+[2013-12-20 20:53] [PACMAN] installed make (4.0-2)
+[2013-12-30 14:41] [PACMAN] Running 'pacman -Syu'
+[2013-12-30 14:41] [PACMAN] synchronizing package lists
+[2013-12-30 14:41] [PACMAN] starting full system upgrade
+[2013-12-30 14:41] [PACMAN] upgraded cryptsetup (1.6.2-2 -> 1.6.3-1)
+[2013-12-30 14:41] [PACMAN] upgraded curl (7.33.0-3 -> 7.34.0-1)
+[2013-12-30 14:41] [PACMAN] upgraded libbluray (0.4.0-1 -> 0.5.0-1)
+[2013-12-30 14:41] [PACMAN] upgraded rtmpdump (20121230-3 -> 20131205-1)
+[2013-12-30 14:41] [PACMAN] upgraded ffmpeg (1:2.1.1-2 -> 1:2.1.1-3)
+[2013-12-30 14:41] [PACMAN] upgraded hwids (20130607-1 -> 20130915.1-1)
+[2013-12-30 14:41] [PACMAN] upgraded libpipeline (1.2.5-1 -> 1.2.6-1)
+[2013-12-30 14:41] [PACMAN] upgraded xcb-proto (1.9-1 -> 1.10-1)
+[2013-12-30 14:41] [PACMAN] upgraded libxcb (1.9.1-2 -> 1.10-1)
+[2013-12-30 14:41] [PACMAN] upgraded libxft (2.3.1-1 -> 2.3.1-2)
+[2013-12-30 14:42] [PACMAN] upgraded mkinitcpio (16-1 -> 16-2)
+[2013-12-30 14:42] [ALPM-SCRIPTLET] >>> Updating module dependencies. Please wait ...
+[2013-12-30 14:42] [PACMAN] upgraded linux-am33x (3.12.5-1 -> 3.12.6-1)
+[2013-12-30 14:42] [PACMAN] upgraded nodejs (0.10.23-1 -> 0.10.24-1)
+[2013-12-30 14:42] [PACMAN] upgraded pacman-mirrorlist (20131209-1 -> 20131227-1)
+[2013-12-30 14:42] [PACMAN] upgraded s-nail (14.4.5-1 -> 14.5-1)
+[2013-12-30 14:42] [PACMAN] upgraded tzdata (2013h-1 -> 2013i-1)
+[2013-12-30 15:27] [PACMAN] Running 'pacman -S ipcalc'
+[2013-12-30 15:27] [PACMAN] installed ipcalc (0.41-4)
+[2013-12-30 18:12] [PACMAN] Running 'pacman -Syu'
+[2013-12-30 18:12] [PACMAN] synchronizing package lists
+[2013-12-30 18:12] [PACMAN] starting full system upgrade
+[2014-01-03 20:04] [PACMAN] Running 'pacman -Syy'
+[2014-01-03 20:04] [PACMAN] synchronizing package lists
+[2014-01-04 09:11] [PACMAN] Running 'pacman -Syy'
+[2014-01-04 09:11] [PACMAN] synchronizing package lists
+[2014-01-04 09:16] [PACMAN] Running 'pacman -S espeak'
+[2014-01-04 09:16] [PACMAN] installed libsamplerate (0.1.8-3)
+[2014-01-04 09:16] [PACMAN] installed jack (0.121.3-7)
+[2014-01-04 09:16] [PACMAN] installed portaudio (19_20111121-3)
+[2014-01-04 09:16] [PACMAN] installed espeak (1.47.11-1)
+[1999-12-31 18:22] [PACMAN] Running 'pacman -S traceroute'
+[1999-12-31 18:22] [PACMAN] installed traceroute (2.0.19-2)
+[2014-01-08 21:34] [PACMAN] Running 'pacman -S streamer'
+[1999-12-31 19:29] [PACMAN] Running 'pacman -Syy'
+[1999-12-31 19:29] [PACMAN] synchronizing package lists
+[1999-12-31 19:29] [PACMAN] Running 'pacman -Syy'
+[1999-12-31 19:29] [PACMAN] synchronizing package lists
+[1999-12-31 19:29] [PACMAN] Running 'pacman -Syu'
+[1999-12-31 19:29] [PACMAN] synchronizing package lists
+[1999-12-31 19:29] [PACMAN] starting full system upgrade
+[1999-12-31 19:30] [PACMAN] upgraded openssl (1.0.1.e-5 -> 1.0.1.f-1)
+[1999-12-31 19:30] [PACMAN] upgraded curl (7.34.0-1 -> 7.34.0-2)
+[1999-12-31 19:30] [PACMAN] installed libdbus (1.6.18-3)
+[1999-12-31 19:30] [PACMAN] upgraded dbus (1.6.18-1 -> 1.6.18-3)
+[1999-12-31 19:31] [PACMAN] upgraded erlang (R16B03-2 -> R16B03-4)
+[1999-12-31 19:31] [PACMAN] upgraded grep (2.15-1 -> 2.16-1)
+[1999-12-31 19:31] [PACMAN] upgraded haveged (1.7.c-3 -> 1.8-1)
+[1999-12-31 19:31] [PACMAN] upgraded kmod (15-1 -> 16-1)
+[1999-12-31 19:31] [PACMAN] upgraded libass (0.10.2-1 -> 0.10.2-2)
+[1999-12-31 19:31] [PACMAN] upgraded libcap (2.22-5 -> 2.24-1)
+[1999-12-31 19:31] [PACMAN] upgraded libdrm (2.4.50-1 -> 2.4.51-1)
+[1999-12-31 19:32] [ALPM-SCRIPTLET] >>> Updating module dependencies. Please wait ...
+[1999-12-31 19:32] [PACMAN] upgraded linux-am33x (3.12.6-1 -> 3.12.6-2)
+[1999-12-31 19:32] [PACMAN] upgraded mesa (10.0.1-1 -> 10.0.1-2)
+[1999-12-31 19:32] [PACMAN] upgraded mesa-libgl (10.0.1-1 -> 10.0.1-2)
+[1999-12-31 19:32] [PACMAN] upgraded pacman-mirrorlist (20131227-1 -> 20140107-1)
+[1999-12-31 19:32] [PACMAN] upgraded pacman (4.1.2-4 -> 4.1.2-5)
+[1999-12-31 19:32] [PACMAN] upgraded s-nail (14.5-1 -> 14.5.1-1)
+[1999-12-31 19:32] [PACMAN] upgraded vim-runtime (7.4.86-1 -> 7.4.135-1)
+[1999-12-31 19:32] [PACMAN] upgraded vim (7.4.86-1 -> 7.4.135-1)
+[2014-01-11 03:15] [PACMAN] Running 'pacman -Syy'
+[2014-01-11 03:15] [PACMAN] synchronizing package lists
+[2014-01-11 03:16] [PACMAN] Running 'pacman -S ls'
+[2014-01-12 15:06] [PACMAN] Running 'pacman -S ls'
+[2014-01-12 15:06] [PACMAN] Running 'pacman -S zsh'
+[2014-01-12 15:07] [PACMAN] installed zsh (5.0.5-1)
+[2014-01-12 21:29] [PACMAN] Running 'pacman -Syu'
+[2014-01-12 21:29] [PACMAN] synchronizing package lists
+[2014-01-12 21:29] [PACMAN] starting full system upgrade

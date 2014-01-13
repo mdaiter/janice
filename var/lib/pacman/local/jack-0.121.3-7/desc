@@ -1,0 +1,54 @@
+%NAME%
+jack
+
+%VERSION%
+0.121.3-7
+
+%DESC%
+A low-latency audio server
+
+%URL%
+http://jackaudio.org/
+
+%ARCH%
+armv7h
+
+%BUILDDATE%
+1349639779
+
+%INSTALLDATE%
+1388852212
+
+%PACKAGER%
+Kevin Mihelich <kevin@archlinuxarm.org>
+
+%SIZE%
+2523136
+
+%REASON%
+1
+
+%LICENSE%
+GPL
+LGPL
+
+%VALIDATION%
+md5
+
+%REPLACES%
+jack-audio-connection-kit
+
+%DEPENDS%
+libsamplerate
+readline
+
+%OPTDEPENDS%
+libffado: FireWire support
+celt: NetJACK driver
+
+%CONFLICTS%
+jack-audio-connection-kit
+
+%PROVIDES%
+jack-audio-connection-kit=0.121.3
+

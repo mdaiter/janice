@@ -1,0 +1,36 @@
+%NAME%
+ipcalc
+
+%VERSION%
+0.41-4
+
+%DESC%
+Calculates IP broadcast, network, Cisco wildcard mask, and host ranges
+
+%URL%
+http://jodies.de/ipcalc
+
+%ARCH%
+any
+
+%BUILDDATE%
+1329589516
+
+%INSTALLDATE%
+1388442462
+
+%PACKAGER%
+Kevin Mihelich <kevin@archlinuxarm.org>
+
+%SIZE%
+40960
+
+%LICENSE%
+GPL
+
+%VALIDATION%
+md5
+
+%DEPENDS%
+perl
+
